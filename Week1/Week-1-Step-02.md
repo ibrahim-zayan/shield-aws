@@ -35,12 +35,10 @@ Zones, with traffic distributed through an Application Load Balancer.
 - Both instances became healthy targets.
 - Repeated requests to the ALB returned both instance IDs.
 
-## Screenshots
+![ASG with two instances in service](./Screenshots/step-02-asg-in-service.png)
 
-![ASG with two instances in service](./step-02-asg-in-service.png)
+![Healthy targets](./Screenshots/step-02-targets-healthy.png)
 
-![Two healthy targets](step-02-targets-healthy.png)
+![ALB response from instance 1](./Screenshots/step-02-alb-response-1.png)
 
-![ALB response from the first instance](step-02-alb-response-1.png)
-
-![ALB response from the second instance](step-02-alb-response-2.png)
+![ALB response from instance 2](./Screenshots/step-02-alb-response-2.png)
