@@ -37,18 +37,10 @@ Zones, with traffic distributed through an Application Load Balancer.
 
 ## Screenshots
 
-Add screenshots to `week-1/screenshots/` and update the filenames below if needed.
+![ASG with two instances in service](step-02-asg-in-service.png)
 
-### Auto Scaling Group
+![Two healthy targets](step-02-targets-healthy.png)
 
-![Two instances in service](screenshots/step-02-asg-in-service.png)
+![ALB response from the first instance](step-02-alb-response-1.png)
 
-### Healthy Target Group
-
-![Two healthy targets](screenshots/step-02-targets-healthy.png)
-
-### ALB Responses
-
-![ALB response from the first instance](screenshots/step-02-alb-response-1.png)
-
-![ALB response from the second instance](screenshots/step-02-alb-response-2.png)
+![ALB response from the second instance](step-02-alb-response-2.png)
