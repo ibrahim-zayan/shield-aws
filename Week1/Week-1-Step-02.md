@@ -35,7 +35,6 @@ Zones, with traffic distributed through an Application Load Balancer.
 - Both instances became healthy targets.
 - Repeated requests to the ALB returned both instance IDs.
 
-## Screenshots
 
 ## Screenshots
 
