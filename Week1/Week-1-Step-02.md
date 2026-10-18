@@ -37,3 +37,12 @@ Zones, with traffic distributed through an Application Load Balancer.
 
 ## Screenshots
 
+## Screenshots
+
+![ASG with two instances in service](./Screenshoots/step-02-asg-in-service.png)
+
+![Healthy targets](./Screenshoots/step-02-targets-healthy.png)
+
+![ALB response from instance 1](./Screenshoots/step-02-alb-response-1.png)
+
+![ALB response from instance 2](./Screenshoots/step-02-alb-response-2.png)
