@@ -1,5 +1,5 @@
 # Week 1 - Step 01: Core Network Architecture, Security Groups & IAM
-
+owner:Abdelrahman
 ## 1. Global Network Settings
 - **Region:** `eu-north-1` (Europe - Stockholm)
 - **VPC Name:** `Primary-vpc`
