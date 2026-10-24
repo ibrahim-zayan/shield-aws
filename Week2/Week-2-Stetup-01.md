@@ -32,7 +32,8 @@ This task implements automatic replacement of unhealthy EC2 instances using ALB 
 
 **Screenshot:** Target Group > Health checks tab
 
-![Target Group health check settings]("C:\Github\shield-aws\Week2\screenshots\Omar's task\Targetgrouphealthcheck.png")
+![Target Group health check settings](screenshots/Omar's%20task/Targetgrouphealthcheck.png)
+
 
 ### 1.2 ASG health check type
 
@@ -45,14 +46,13 @@ This task implements automatic replacement of unhealthy EC2 instances using ALB 
 
 **Screenshot:** ASG > Details tab > Health checks
 
-![ASG health check type and grace period]("C:\Github\shield-aws\Week2\screenshots\Omar's task\ASGhealthcheck.png")
+![ASG health check type and grace period](screenshots/Omar's%20task/ASGhealthcheck.png)
 
 ### 1.3 ASG attached to the Target Group
 
 **Screenshot:** ASG > Integrations tab > Load balancing (`Team-Compute-TG`)
 
-![ASG integrations](PASTE_LINK_HERE)
-
+![ASG integrations](screenshots/Omar's%20task/ASG%20integrations.png)
 ### 1.4 ASG capacity
 
 | Setting | Value |
@@ -63,7 +63,7 @@ This task implements automatic replacement of unhealthy EC2 instances using ALB 
 
 **Screenshot:** ASG > Capacity overview
 
-![ASG capacity]("C:\Github\shield-aws\Week2\screenshots\Omar's task\ASGcapacity.png")
+![ASG capacity](screenshots/Omar's%20task/ASGcapacity.png)
 
 ### 1.5 Test and evidence
 
@@ -80,19 +80,19 @@ Two replacement cycles were recorded on 2026-10-23 (UTC+03:00):
 
 **Screenshot:** Target Group before the test (2 Healthy / 0 Unhealthy)
 
-![Target Group before test]("C:\Github\shield-aws\Week2\screenshots\Omar's task\targetgroupbeforehealthcheck.png")
+![Target Group before test](screenshots/Omar's%20task/targetgroupbeforehealthcheck.png)
 
 **Screenshot:** Target Group during the test (1 Healthy / 1 Unhealthy, "Health checks failed")
 
-![Target Group during test]("C:\Github\shield-aws\Week2\screenshots\Omar's task\Targetgroupduringhealthcheck.png")
+![Target Group during test](screenshots/Omar's%20task/Targetgroupduringhealthcheck.png)
 
 **Screenshot:** ASG > Activity history (terminate + launch, all Successful)
 
-![ASG activity history]("C:\Github\shield-aws\Week2\screenshots\Omar's task\ASGactivityhistory.png")
+![ASG activity history](screenshots/Omar's%20task/ASGactivityhistory.png)
 
 **Screenshot:** CloudWatch alarm email (`unhealthy host count Notice`, OK -> ALARM at 17:07 UTC)
 
-![CloudWatch alarm email]("C:\Github\shield-aws\Week2\screenshots\Omar's task\cloudwatchalarmmail.png")
+![CloudWatch alarm email](screenshots/Omar's%20task/cloudwatchalarmmail.png)
 
 ---
 
@@ -113,7 +113,7 @@ With no inbound and no outbound rules, an instance placed in this group cannot a
 
 **Screenshot:** Security Groups > `Quarantine-SG` > Details
 
-![Quarantine-SG details]("C:\Github\shield-aws\Week2\screenshots\Omar's task\Quarantine-SG details.png")
+![Quarantine-SG details](screenshots/Omar's%20task/Quarantine-SG details.png)
 
 ### 2.2 Verification that it is not attached to anything
 
@@ -125,15 +125,15 @@ Checked from three angles:
 
 **Screenshot:** Network Interfaces filtered by SG ID
 
-![No network interface attached]("C:\Github\shield-aws\Week2\screenshots\Omar's task\Network Interfaces.png")
+![No network interface attached](screenshots/Omar's%20task/Network Interfaces.png")
 
 **Screenshot:** Instances filtered by SG ID
 
-![No instance attached]("C:\Github\shield-aws\Week2\screenshots\Omar's task\Instances.png")
+![No instance attached](screenshots/Omar's%20task/Instances.png)
 
 **Screenshot:** Related resources > All resources
 
-![Related resources]("C:\Github\shield-aws\Week2\screenshots\Omar's task\Related resources.png")
+![Related resources](screenshots/Omar's%20task/Related resources.png)
 
 ### 2.3 Planned isolation workflow 
 
