@@ -113,7 +113,7 @@ With no inbound and no outbound rules, an instance placed in this group cannot a
 
 **Screenshot:** Security Groups > `Quarantine-SG` > Details
 
-![Quarantine-SG details](screenshots/Omar's%20task/Quarantine-SG details.png)
+![Quarantine-SG details](screenshots/Omar's%20task/Quarantine-SG%20details.png)
 
 ### 2.2 Verification that it is not attached to anything
 
@@ -125,15 +125,14 @@ Checked from three angles:
 
 **Screenshot:** Network Interfaces filtered by SG ID
 
-![No network interface attached](screenshots/Omar's%20task/Network Interfaces.png")
+![No network interface attached](screenshots/Omar's%20task/Network%20Interfaces.png)
 
 **Screenshot:** Instances filtered by SG ID
 
 ![No instance attached](screenshots/Omar's%20task/Instances.png)
 
 **Screenshot:** Related resources > All resources
-
-![Related resources](screenshots/Omar's%20task/Related resources.png)
+![Related resources](screenshots/Omar's%20task/Related%20resources.png)
 
 ### 2.3 Planned isolation workflow 
 
