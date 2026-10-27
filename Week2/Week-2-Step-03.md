@@ -4,32 +4,31 @@
 
 ## Objective
 
-Automatically detect and remove public SSH ingress rules from the team's application security group.
+Detect and remove public SSH access from the team's application security group to reduce exposure of the application servers.
 
 ## Implementation Summary
 
-- Implemented the remediation handler in Python using `boto3`.
-- Deployed the handler as the `Team-SSH-Remediation` AWS Lambda function.
-- Configured a dedicated EventBridge rule, `Team-SSH-Public-Ingress-Remediation`, to detect EC2 `AuthorizeSecurityGroupIngress` events recorded through CloudTrail.
-- Connected the EventBridge rule to the Lambda function and allowed EventBridge to invoke it.
-- Scoped the function to the existing `Primary-App-EC2-SG`.
-- Configured the Lambda function to find and revoke public IPv4 SSH ingress rules (`TCP/22` from `0.0.0.0/0`).
-- Created a dedicated IAM execution role with permissions to inspect security group rules, revoke ingress on the application security group, and write CloudWatch Logs.
+- Created the `Team-SSH-Remediation` Lambda function to inspect security group ingress rules.
+- Configured the `Team-SSH-Public-Ingress-Remediation` EventBridge rule to detect EC2 `AuthorizeSecurityGroupIngress` events recorded through CloudTrail.
+- Connected the EventBridge rule to the Lambda function.
+- Scoped remediation to the existing `Primary-App-EC2-SG`.
+- The function looks for public IPv4 SSH access (`TCP/22` from `0.0.0.0/0`) and removes matching ingress rules.
+- Added a dedicated execution role with permissions to inspect security group rules, revoke ingress on the application security group, and write CloudWatch Logs.
 - Configured a CloudWatch log group with 30-day retention.
-- Provisioned the Lambda and its supporting resources with Terraform.
 
 ## Response Scope
 
-- The Lambda removes the public SSH rule from the shared application security group.
+- Removing a public SSH rule from the shared application security group protects all instances that use that group.
 - Opening SSH is treated as exposure, not proof that an instance is compromised.
-- Instance quarantine is a manual response when there is evidence of compromise; the Lambda does not quarantine instances.
-- GuardDuty was unavailable in the team account during implementation.
+- If there is evidence that a specific instance is compromised, quarantine that instance individually using `Quarantine-SG`.
+- Quarantine is a manual response and is not performed by this Lambda function.
 
 ## Validation
 
-- Terraform planned 7 resources to add, 0 to change, and 0 to destroy.
-- The existing Compute resources were not included in the planned changes.
-- Capture the Lambda execution logs and the security group state after a remediation test before documenting the test as successful.
+- Confirm that the EventBridge rule is enabled and connected to the Lambda function.
+- After a remediation test, verify that the public SSH rule has been removed from `Primary-App-EC2-SG`.
+- Review the Lambda execution logs in CloudWatch to confirm the event was processed.
+- Record the remediation test as successful only after confirming both the security group change and the Lambda execution logs.
 
 ## Screenshots
 
