@@ -1,5 +1,5 @@
 # Week 2 - Step 02: Multi-Tier Automated Self-Healing & Race Condition Resolution
-
+Owner:Abdelrahman
 ## Overview
 In this step, we resolved the **Race Condition** between the **Auto Scaling Group (ASG)** and **AWS Systems Manager (SSM)** during service-level failures, and implemented a complete **Multi-Tier Automated Self-Healing Architecture** with built-in failure escalation (`|| sudo poweroff`).
 
