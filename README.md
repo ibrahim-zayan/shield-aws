@@ -81,13 +81,6 @@ This project implements a resilient, production-grade cloud architecture on **Am
 ├── README.md
 ├── architecture-diagram.png       # Full Project Cloud Architecture Diagram
 ├── Week1/
-│   ├── Week-1-Step-01.md          # Network, Security Groups, VPC Endpoints & IAM Setup
-│   ├── Week-1-Step-02.md          # Compute (ALB, Launch Template, ASG) Deployment
-│   ├── Week-1-Step-03.md          # RDS Multi-AZ Database Deployment
-│   ├── Week-1-Step-04.md          # CloudWatch Monitoring, CloudTrail & Budgets
-│   └── Screenshoots/              # Week 1 Verification Evidence
 ├── Week2/
-│   ├── Week-2-Step-02.md          # Multi-Tier Automated Self-Healing & Race Condition Resolution
-│   └── screenshots/               # Week 2 Verification Evidence
 ├── Week3/                         # Warm Standby DR, Route 53 Failover & Cyber Recovery Runbooks
 └── Week4/                         # Modular Terraform (IaC) Codebase & RTO/RPO Test Reports
