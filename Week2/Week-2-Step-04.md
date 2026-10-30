@@ -1,51 +1,69 @@
 # Operational Event-Driven Monitoring & Alerting
 
-**Owner:** Hazem Elsayed | **Region:** Europe (Stockholm) `eu-north-1`
+**Owner:** Hazem Elsayed | **Region:** Europe (Stockholm) `eu-north-1` | **Account:** `253957900169`
 
 ---
 
 ## Summary
-This task implements an automated monitoring and event-driven alerting architecture using **Amazon EventBridge** and **Amazon SNS** in the Stockholm region. The system routes infrastructure state changes and health alerts directly to designated endpoints.
+This task implements an automated monitoring and event-driven alerting architecture using **Amazon EventBridge** and **Amazon SNS** in the Stockholm region. Infrastructure state changes and health alerts are captured by EventBridge rules and delivered to the engineering team by email through an SNS topic.
 
-* **Amazon EventBridge Rules:** Configured to monitor specific operational pattern events (SSH access, Auto Scaling lifecycles, and CloudWatch Alarm state changes).
-* **Amazon SNS Topic:** Configured with confirmed email subscriptions and explicit access policies to handle alert delivery securely.
+* **Amazon EventBridge Rules:** Three event pattern rules monitor operational events (SSH access, Auto Scaling lifecycle events, and CloudWatch Alarm state changes).
+* **Amazon SNS Topic:** A standard topic with two confirmed email subscriptions and an access policy restricted to the account owner.
 
 ---
 
 ## Part 1: EventBridge Architecture & Event Pattern Rules
 
-### 1.1 Event Buses Overview
-The default EventBridge bus is utilized to capture system-generated events across the region.
-* **Bus Name:** `default`
-* **ARN:** `arn:aws:events:eu-north-1:253957900169:event-bus/default`
+### 1.1 Event Bus Overview
+The **default** event bus is used to capture system-generated events across the region. No custom bus, schema discovery, or discoverer is configured.
 
-**Screenshot: EventBridge > Event buses**
+* **Event Bus Name:** `default`
+* **Event Bus ARN:** `arn:aws:events:eu-north-1:253957900169:event-bus/default`
+* **Schema Discovery:** Not initiated
+* **Rules attached to the bus:** 3
 
-![EventBridge Buses](./screenshots/Screenshot-2026-10-22-204845_2.png)
+**Screenshot: EventBridge > Event buses > default**
+
+![EventBridge Default Event Bus](./screenshots/Screenshot-2026-10-22-205211_2.png)
 
 ---
 
 ### 1.2 Event Pattern Rules Configuration
-Three active event rules are deployed to handle specific operational triggers:
-* `notify-alarm-state`: Monitors CloudWatch Alarm transitions.
-* `notify-asg-events`: Captures Auto Scaling Group lifecycle notifications.
-* `notify-ssh-open`: Tracks inbound SSH connections and potential security events.
+Three **Standard** event pattern rules are created on the `default` bus. All of them are in the **Enabled** state.
+
+| Rule Name | Status | Type | Event Bus | Purpose |
+|---|---|---|---|---|
+| `notify-alarm-state` | Enabled | Standard | default | Monitors CloudWatch Alarm state transitions |
+| `notify-asg-events` | Enabled | Standard | default | Captures Auto Scaling Group lifecycle notifications |
+| `notify-ssh-open` | Enabled | Standard | default | Tracks inbound SSH connections and potential security events |
+
+**Rule ARNs:**
+* `arn:aws:events:eu-north-1:253957900169:rule/notify-alarm-state`
+* `arn:aws:events:eu-north-1:253957900169:rule/notify-asg-events`
+* `arn:aws:events:eu-north-1:253957900169:rule/notify-ssh-open`
 
 **Screenshot: Event pattern rules list**
 
-![Event Pattern Rules](./screenshots/Screenshot-2026-10-22-205211_2.png)
+![Event Pattern Rules](./screenshots/Screenshot-2026-10-22-205219_2.png)
 
 ---
 
 ## Part 2: Amazon SNS Notification Infrastructure
 
 ### 2.1 Topic Details & Subscriptions
-A dedicated SNS topic routes critical system alerts to the engineering team via email protocols.
+A dedicated SNS topic delivers critical system alerts to the engineering team via the email protocol.
+
 * **Topic Name:** `Un_healthy_alert`
 * **Topic ARN:** `arn:aws:sns:eu-north-1:253957900169:Un_healthy_alert`
-* **Confirmed Subscriptions:**
-  * `omarmohamedu309@gmail.com` (Email Protocol - Confirmed)
-  * `hazemelsaied37@gmail.com` (Email Protocol - Confirmed)
+* **Type:** Standard
+* **Topic Owner:** `253957900169`
+* **Maximum Message Size:** 256 KiB
+* **Confirmed Subscriptions (2):**
+
+| Endpoint | Protocol | Status |
+|---|---|---|
+| `omarmohamedu309@gmail.com` | EMAIL | Confirmed |
+| `hazemelsaied37@gmail.com` | EMAIL | Confirmed |
 
 **Screenshot: SNS > Topics > Un_healthy_alert > Subscriptions**
 
@@ -54,20 +72,37 @@ A dedicated SNS topic routes critical system alerts to the engineering team via 
 ---
 
 ### 2.2 SNS Topic Access Policy
-The IAM Access Policy defines publish and subscribe permissions restricted strictly to the topic owner resource scope (`253957900169`).
+The access policy defines who can publish to and subscribe to the topic. It uses policy version `2008-10-17` with the default policy ID, and grants the following actions on the topic:
 
-**Screenshot: Access policy configuration**
+* `SNS:GetTopicAttributes`
+* `SNS:SetTopicAttributes`
+* `SNS:AddPermission`
+* `SNS:RemovePermission`
+* `SNS:DeleteTopic`
+* `SNS:Subscribe`
+* `SNS:ListSubscriptionsByTopic`
+* `SNS:Publish`
 
-![SNS Access Policy 1](./screenshots/Screenshot-2026-10-22-205350_2.png)
+Access is restricted to the topic owner's account using the condition `StringEquals` on `AWS:SourceOwner` with the value `253957900169`. The policy applies to the resource `arn:aws:sns:eu-north-1:253957900169:Un_healthy_alert`.
 
-![SNS Access Policy 2](./screenshots/Screenshot-2026-10-22-205357_2.png)
+**Screenshot: Access policy (statement, principal and actions)**
+
+![SNS Access Policy - Statement and Actions](./screenshots/Screenshot-2026-10-22-205357_2.png)
+
+**Screenshot: Access policy (resource and condition)**
+
+![SNS Access Policy - Resource and Condition](./screenshots/Screenshot-2026-10-22-205350_2.png)
 
 ---
 
 ## Part 3: Verification & Status Summary
 
-All SNS topics and EventBridge event rules have been verified active and confirmed within the `eu-north-1` region.
+* The `default` event bus holds **3 enabled** event pattern rules.
+* The SNS topic `Un_healthy_alert` has **2 confirmed** email subscriptions.
+* The SNS Topics page lists 2 standard topics in `eu-north-1`: `Un_healthy_alert` (this task) and `aws-cloudtrail-logs-253957900169-c487c730` (CloudTrail).
 
-**Screenshot: Amazon SNS Topics Overview**
+All resources were verified active in the `eu-north-1` region.
+
+**Screenshot: Amazon SNS > Topics overview**
 
 ![SNS Topics List](./screenshots/Screenshot-2026-10-22-205414_2.png)
