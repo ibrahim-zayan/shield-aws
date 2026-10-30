@@ -24,8 +24,7 @@ The **default** event bus is used to capture system-generated events across the 
 
 **Screenshot: EventBridge > Event buses > default**
 
-![EventBridge Default Event Bus](<img width="1917" height="1003" alt="Screenshot 2026-10-22 204845" src="https://github.com/user-attachments/assets/5d335511-f94a-4f87-861e-4c1c13c6f89d" />
-)
+![EventBridge Default Event Bus](https://github.com/user-attachments/assets/5d335511-f94a-4f87-861e-4c1c13c6f89d)
 
 ---
 
@@ -45,8 +44,7 @@ Three **Standard** event pattern rules are created on the `default` bus. All of 
 
 **Screenshot: Event pattern rules list**
 
-![Event Pattern Rules](<img width="1890" height="913" alt="Screenshot 2026-10-22 205350" src="https://github.com/user-attachments/assets/6cd391bb-1018-4679-b990-451ac50b43c4" />
-)
+<!-- ضع هنا صورة Screenshot 2026-10-22 205219 (قائمة الـ Rules) -->
 
 ---
 
@@ -69,8 +67,7 @@ A dedicated SNS topic delivers critical system alerts to the engineering team vi
 
 **Screenshot: SNS > Topics > Un_healthy_alert > Subscriptions**
 
-![SNS Subscriptions](<img width="1906" height="903" alt="Screenshot 2026-10-22 205237" src="https://github.com/user-attachments/assets/978cbbfd-ba59-437c-ab8b-4f4fe8ed3798" />
-)
+![SNS Subscriptions](https://github.com/user-attachments/assets/978cbbfd-ba59-437c-ab8b-4f4fe8ed3798)
 
 ---
 
@@ -90,13 +87,11 @@ Access is restricted to the topic owner's account using the condition `StringEqu
 
 **Screenshot: Access policy (statement, principal and actions)**
 
-![SNS Access Policy - Statement and Actions](<img width="1873" height="875" alt="Screenshot 2026-10-22 205357" src="https://github.com/user-attachments/assets/076d0bd9-e104-4d2b-b421-5032c2387cf0" />
-)
+![SNS Access Policy - Statement and Actions](https://github.com/user-attachments/assets/076d0bd9-e104-4d2b-b421-5032c2387cf0)
 
 **Screenshot: Access policy (resource and condition)**
 
-![SNS Access Policy - Resource and Condition](<img width="1890" height="913" alt="Screenshot 2026-10-22 205350" src="https://github.com/user-attachments/assets/a3a4c0df-7528-4445-b074-00eac5aea2af" />
-)
+![SNS Access Policy - Resource and Condition](https://github.com/user-attachments/assets/a3a4c0df-7528-4445-b074-00eac5aea2af)
 
 ---
 
@@ -110,5 +105,4 @@ All resources were verified active in the `eu-north-1` region.
 
 **Screenshot: Amazon SNS > Topics overview**
 
-![SNS Topics List](<img width="1907" height="906" alt="Screenshot 2026-10-22 205414" src="https://github.com/user-attachments/assets/9ab199eb-718c-4b8f-be21-24a78d9a4694" />
-)
+![SNS Topics List](https://github.com/user-attachments/assets/9ab199eb-718c-4b8f-be21-24a78d9a4694)
