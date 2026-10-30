@@ -20,7 +20,7 @@ The default EventBridge bus is utilized to capture system-generated events acros
 * **ARN:** `arn:aws:events:eu-north-1:253957900169:event-bus/default`
 
 **Screenshot: EventBridge > Event buses**
-![EventBridge Buses](./Screenshots/Screenshot-2026-10-22-204845_2.jpg)
+![EventBridge Buses](./screenshots/Screenshot-2026-10-22-204845_2.jpg)
 
 ---
 
@@ -31,8 +31,8 @@ Three active event rules are deployed to handle specific operational triggers:
 * `notify-ssh-open`: Tracks inbound SSH connections and potential security events.
 
 **Screenshot: Event pattern rules list**
-![Event Pattern Rules](./Screenshots/Screenshot-2026-10-22-204845_2.jpg)
-![Event Bus Details](./Screenshots/Screenshot-2026-10-22-205211_2.png)
+![Event Pattern Rules](./screenshots/screenshots/Screenshot-2026-10-22-204845_2.jpg)
+![Event Bus Details](./screenshots/Screenshot-2026-10-22-205211_2.png)
 
 ---
 
@@ -47,7 +47,7 @@ A dedicated SNS topic routes critical system alerts to the engineering team via 
   * `hazemelsaied37@gmail.com` (Email Protocol - Confirmed)
 
 **Screenshot: SNS > Topics > Un_healthy_alert > Subscriptions**
-![SNS Subscriptions](./Screenshots/Screenshot-2026-10-22-205237_2.png)
+![SNS Subscriptions](./screenshots/Screenshot-2026-10-22-205237_2.png)
 
 ---
 
@@ -55,8 +55,8 @@ A dedicated SNS topic routes critical system alerts to the engineering team via 
 The IAM Access Policy defines publish and subscribe permissions restricted strictly to the topic owner resource scope (`253957900169`).
 
 **Screenshot: Access policy configuration**
-![SNS Access Policy 1](./Screenshots/Screenshot-2026-10-22-205350_2.png)
-![SNS Access Policy 2](./Screenshots/Screenshot-2026-10-22-205357_2.png)
+![SNS Access Policy 1](./screenshots/Screenshot-2026-10-22-205350_2.png)
+![SNS Access Policy 2](./screenshots/Screenshot-2026-10-22-205357_2.png)
 
 ---
 
@@ -65,4 +65,4 @@ The IAM Access Policy defines publish and subscribe permissions restricted stric
 All SNS topics and EventBridge event rules have been verified active and confirmed within the `eu-north-1` region.
 
 **Screenshot: Amazon SNS Topics Overview**
-![SNS Topics List](./Screenshots/Screenshot-2026-10-22-205414_2.png)
+![SNS Topics List](./screenshots/Screenshot-2026-10-22-205414_2.png)
