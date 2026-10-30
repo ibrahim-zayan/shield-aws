@@ -24,7 +24,7 @@ The **default** event bus is used to capture system-generated events across the 
 
 **Screenshot: EventBridge > Event buses > default**
 
-![EventBridge Default Event Bus](./screenshots/Screenshot-2026-10-22-205211_2.png)
+![EventBridge Default Event Bus](./screenshots/Screenshot-2026-10-22-205211.png)
 
 ---
 
@@ -44,7 +44,7 @@ Three **Standard** event pattern rules are created on the `default` bus. All of 
 
 **Screenshot: Event pattern rules list**
 
-![Event Pattern Rules](./screenshots/Screenshot-2026-10-22-205219_2.png)
+![Event Pattern Rules](./screenshots/Screenshot-2026-10-22-205219.png)
 
 ---
 
@@ -67,7 +67,7 @@ A dedicated SNS topic delivers critical system alerts to the engineering team vi
 
 **Screenshot: SNS > Topics > Un_healthy_alert > Subscriptions**
 
-![SNS Subscriptions](./screenshots/Screenshot-2026-10-22-205237_2.png)
+![SNS Subscriptions](./screenshots/Screenshot-2026-10-22-205237.png)
 
 ---
 
@@ -87,11 +87,11 @@ Access is restricted to the topic owner's account using the condition `StringEqu
 
 **Screenshot: Access policy (statement, principal and actions)**
 
-![SNS Access Policy - Statement and Actions](./screenshots/Screenshot-2026-10-22-205357_2.png)
+![SNS Access Policy - Statement and Actions](./screenshots/Screenshot-2026-10-22-205357.png)
 
 **Screenshot: Access policy (resource and condition)**
 
-![SNS Access Policy - Resource and Condition](./screenshots/Screenshot-2026-10-22-205350_2.png)
+![SNS Access Policy - Resource and Condition](./screenshots/Screenshot-2026-10-22-205350.png)
 
 ---
 
@@ -105,4 +105,4 @@ All resources were verified active in the `eu-north-1` region.
 
 **Screenshot: Amazon SNS > Topics overview**
 
-![SNS Topics List](./screenshots/Screenshot-2026-10-22-205414_2.png)
+![SNS Topics List](./screenshots/Screenshot-2026-10-22-205414.png)
