@@ -41,12 +41,12 @@ Detect and remove public SSH access from the team's application security group t
 
 ## Screenshots
 
-![Lambda function overview](./Screenshots/Ibrahim/step-03-lambda-overview.png)
+![Lambda function overview](./screenshots/Ibrahim/step-03-lambda-overview.png)
 
-![Lambda configuration and execution role](./Screenshots/Ibrahim/step-03-lambda-configuration.png)
+![Lambda configuration and execution role](./screenshots/Ibrahim/step-03-lambda-configuration.png)
 
-![EventBridge rule and Lambda target](./Screenshots/Ibrahim/step-03-eventbridge-rule.png)
+![EventBridge rule and Lambda target](./screenshots/Ibrahim/step-03-eventbridge-rule.png)
 
-![Lambda IAM permissions](./Screenshots/Ibrahim/step-03-iam-permissions.png)
+![Lambda IAM permissions](./screenshots/Ibrahim/step-03-iam-permissions.png)
 
-![Application security group inbound rules](./Screenshots/Ibrahim/step-03-app-sg-inbound-rules.png)
+![Application security group inbound rules](./screenshots/Ibrahim/step-03-app-sg-inbound-rules.png)
