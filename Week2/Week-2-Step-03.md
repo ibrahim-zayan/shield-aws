@@ -41,14 +41,15 @@ Detect and remove public SSH access from the team's application security group t
 
 ## Screenshots
 
-[Lambda function overview](https://github.com/ibrahim-zayan/shield-aws/blob/main/Week2/Screenshoots/step-03-lambda-overview.png) ([image](https://github.com/ibrahim-zayan/shield-aws/raw/main/Week2/Screenshoots/step-03-lambda-overview.png))
+![Lambda function overview](./Screenshoots/Ibrahim/step-03-lambda-overview.png)
 
-[Lambda configuration and execution role](https://github.com/ibrahim-zayan/shield-aws/blob/main/Week2/Screenshoots/step-03-lambda-configuration.png) ([image](https://github.com/ibrahim-zayan/shield-aws/raw/main/Week2/Screenshoots/step-03-lambda-configuration.png))
+![Lambda configuration and execution role](./Screenshoots/Ibrahim/step-03-lambda-configuration.png)
 
-[EventBridge rule and Lambda target](https://github.com/ibrahim-zayan/shield-aws/blob/main/Week2/Screenshoots/step-03-eventbridge-rule.png) ([image](https://github.com/ibrahim-zayan/shield-aws/raw/main/Week2/Screenshoots/step-03-eventbridge-rule.png))
+![EventBridge rule and Lambda target](./Screenshoots/Ibrahim/step-03-eventbridge-rule.png)
 
-[Lambda IAM permissions](https://github.com/ibrahim-zayan/shield-aws/blob/main/Week2/Screenshoots/step-03-iam-permissions.png) ([image](https://github.com/ibrahim-zayan/shield-aws/raw/main/Week2/Screenshoots/step-03-iam-permissions.png))
+![Lambda IAM permissions](./Screenshoots/Ibrahim/step-03-iam-permissions.png)
 
+![Application security group inbound rules](./Screenshoots/Ibrahim/step-03-app-sg-inbound-rules.png)
 [Lambda CloudWatch logs](https://github.com/ibrahim-zayan/shield-aws/blob/main/Week2/Screenshoots/step-03-cloudwatch-logs.png) ([image](https://github.com/ibrahim-zayan/shield-aws/raw/main/Week2/Screenshoots/step-03-cloudwatch-logs.png))
 
 [Application security group after remediation test](https://github.com/ibrahim-zayan/shield-aws/blob/main/Week2/Screenshoots/step-03-security-group-after-test.png) ([image](https://github.com/ibrahim-zayan/shield-aws/raw/main/Week2/Screenshoots/step-03-security-group-after-test.png))
