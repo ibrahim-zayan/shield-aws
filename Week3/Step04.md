@@ -44,4 +44,10 @@ This test did not perform an AWS Backup restore, an RDS restore, or a database p
 
 ## Screenshots
 
-![SHA-256 integrity verification](./screenshots/Ibrahim/s3
+![SHA-256 integrity verification](./screenshots/Ibrahim/s3-sha256-integrity-check.png)
+
+![Standby bucket version history](./screenshots/Ibrahim/s3-standby-version-history.png)
+
+![Completed S3 recovery point in Ireland](./screenshots/Ibrahim/aws-backup-s3-recovery-point.png)
+
+![Restored current version in standby](./screenshots/Ibrahim/s3-final-restored-versions.png)
