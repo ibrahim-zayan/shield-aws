@@ -1,0 +1,6 @@
+bucket       = "REPLACE-WITH-BOOTSTRAP-OUTPUT"
+key          = "week4/dns.tfstate"
+region       = "eu-west-1"
+encrypt      = true
+kms_key_id   = "REPLACE-WITH-BOOTSTRAP-KMS-ARN"
+use_lockfile = true

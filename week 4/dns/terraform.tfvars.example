@@ -1,0 +1,7 @@
+allowed_account_ids  = ["253957900169"]
+domain_name          = "shield-demo.com"
+record_name          = "app"
+primary_alb_dns_name = "REPLACE-WITH-PRIMARY-ALB-DNS-NAME"
+primary_alb_zone_id  = "REPLACE-WITH-PRIMARY-ALB-CANONICAL-ZONE-ID"
+standby_alb_dns_name = "REPLACE-WITH-STANDBY-ALB-DNS-NAME"
+standby_alb_zone_id  = "REPLACE-WITH-STANDBY-ALB-CANONICAL-ZONE-ID"

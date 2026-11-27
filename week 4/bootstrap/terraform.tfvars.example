@@ -1,0 +1,2 @@
+allowed_account_ids = ["253957900169"]
+state_bucket_name   = "shield-aws-tfstate-REPLACE-WITH-UNIQUE-SUFFIX"

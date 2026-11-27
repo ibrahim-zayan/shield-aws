@@ -1,0 +1,3 @@
+allowed_account_ids = ["253957900169"]
+# Review all proposed CIDRs and names with the team before use.
+ec2_ssm_role_name = "Shield-EC2-SSM-Role"
